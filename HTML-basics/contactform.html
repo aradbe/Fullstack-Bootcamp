@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label>Name:</label>
+            <input type="text" placeholder="Enter your name" required>
+            <br><br>
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your email" required>
+            <br><br>
+            <label>Phone Number:</label>
+            <input type="tel" placeholder="Enter your phone number" required>
+            <br><br>     
+            <Label>Linkedin Profile:</Label>
+            <input type="url" placeholder="Enter your LinkedIn profile URL">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Message Details</legend>
+            <label>Subject:</label>
+            <select required>
+                <option value="">Select a subject</option>
+                <option value="general">General</option>
+                <option value="support">Support</option>
+                <option value="feedback">Feedback</option>
+            </select>
+            <br><br>
+            <label>Priority:</label>
+            <input type="radio" name="priority" value="low" required> Low
+            <input type="radio" name="priority" value="medium" required> Medium
+            <input type="radio" name="priority" value="high" required> High
+            <br><br>
+            <label>Message:</label>
+            <textarea placeholder="Enter your message here" required></textarea>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Preferences</legend>
+            <label>How would you like to be contacted?</label>
+            <input type="checkbox" name="contact" value="email" required> Email
+            <input type="checkbox" name="contact" value="phone" > Phone
+        </fieldset>
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+</body>
+</html>
