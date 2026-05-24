@@ -1,0 +1,32 @@
+body {
+    background-color: #f7f0dc;
+    font-family: Arial;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: orange;
+    font-size: 50px;
+}
+
+h2 {
+    background-color: #dbe8f4;
+    color: #4a7bd1;
+    padding: 10px;
+    border-left: 5px solid #4a7bd1;
+}
+
+ul, ol {
+    background-color: #f1ebeb;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+strong {
+    color: rgb(221, 125, 0);
+}
+
+li {
+    margin-bottom: 10px;
+}

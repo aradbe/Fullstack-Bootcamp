@@ -1,0 +1,57 @@
+body {
+    background-color: #1b1b1b;
+    color: #dcdcdc;
+    font-family: "Courier New", monospace;
+    padding: 15px;
+}
+
+h1 {
+    color: #66ff99;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 28px;
+}
+
+p {
+    color: #cfcfcf;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #66ff99;
+    background-color: #2b2b2b;
+}
+
+caption {
+    color: #ffd84d;
+    font-weight: bold;
+    padding: 12px;
+}
+
+th {
+    color: #66ff99;
+    padding: 8px;
+    border: 1px solid #555;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #555;
+}
+
+tr:nth-child(odd) {
+    background-color: #303030;
+}
+
+tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+td:nth-child(2) {
+    color: #ff9f1c;
+    font-weight: bold;
+}

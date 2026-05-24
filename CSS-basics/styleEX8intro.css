@@ -1,0 +1,27 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    color: #333;
+}
+
+h2 {
+    color: #4a90e2;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 5px;
+}
+
+.purple {
+    color: purple;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+    font-style: italic;
+}

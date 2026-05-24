@@ -1,0 +1,22 @@
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIX4FoSBmxytOW0gZEA2xd0DbJOeuMFt3EPw&s');
+        background-size: cover;
+}
+
+.transparent-title {
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 300px;
+    padding: 20px;
+    font-size: 40px;
+    opacity: 0.5;
+
+}
+
+.solid-title {
+    background-color: purple;
+    color: black;
+    width: 300px;
+    padding: 20px;
+    font-size: 40px;
+}
+

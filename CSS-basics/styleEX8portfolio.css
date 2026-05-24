@@ -1,0 +1,53 @@
+body {
+    background-color: #2f3f55;
+    font-family: Arial;
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: orange;
+    font-size: 45px;
+    border-bottom: 2px solid orangered;
+    padding-bottom: 15px;
+}
+
+h2 {
+    color: orangered;
+    border-bottom: 2px solid orangered;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+h3 {
+    color: #4da6ff;
+}
+
+img {
+    width: 250px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+strong {
+    color: gold;
+}
+
+a {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+}
+
+p {
+    line-height: 1.5;
+}
+
+hr {
+    border: 1px solid #555;
+    margin-top: 40px;
+}
