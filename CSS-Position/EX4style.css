@@ -1,0 +1,36 @@
+.background {
+    width: 400px;
+    height: 250px;
+    background-color: rgb(206, 7, 7);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+
+}
+
+.edges {
+    width: 70px;
+    height: 70px;
+    background-color: lightgray;
+
+    position: absolute;
+}
+
+#LeftEdge {
+    left: 0; 
+
+}
+
+#RightEdge {
+    right: 0;
+}
+
+.whitecenter {
+    width: calc(100% - 70px - 70px);
+    height: 180px;
+    background-color: white;
+    position: absolute;
+    left: 70px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
