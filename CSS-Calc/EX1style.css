@@ -1,0 +1,16 @@
+.container {
+    height: 100px;
+    display: flex;
+}
+
+.left {
+    background-color: pink;
+    width: calc(100% - 20px);
+}
+
+.right {
+    background-color: salmon;
+    width: 20px;
+}
+
+ 
