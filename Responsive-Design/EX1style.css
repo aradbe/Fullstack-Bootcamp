@@ -7,5 +7,6 @@
 @media(max-width: 768px){
     .box{
         background-color: red;
+        width: 100%;
     }
 }
