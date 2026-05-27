@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+.product-card {
+  display: flex;
+  width: 900px;
+  height: 320px;
+  background-color: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+  width: 40%;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-img img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+.product-info {
+  width: 60%;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.product-info h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 42px;
+  color: #343a40;
+}
+
+.product-info p {
+  color: #666;
+  line-height: 1.7;
+}
+
+.product-price {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.product-price span {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ff5e57;
+}
+
+.product-price button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .product-card {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: fit-content;
+  }
+
+  .product-img,
+  .product-info {
+    width: 100%;
+  }
+
+  .product-img {
+    height: 260px;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-info {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .product-info h2 {
+    font-size: 28px;
+  }
+
+  .product-price span {
+    font-size: 28px;
+  }
+
+  .product-price {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .product-card {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .product-img {
+        width: 100%;
+        height: 220px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-img img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .product-info {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .product-info h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .product-info p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .product-price {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .product-price span {
+        font-size: 28px;
+    }
+
+    .product-price button {
+        width: 100%;
+    }
+}

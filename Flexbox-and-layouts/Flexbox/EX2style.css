@@ -1,0 +1,38 @@
+.flex-container1 {
+    display: flex;
+}
+
+.flex-container2 {
+    display: flex;
+}
+
+.content1 {
+    background-color: rgb(31, 182, 233);
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    flex-grow:1;
+    margin: 3px;
+}
+
+.contentsmall {
+    background-color: rgb(31, 182, 233);
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    flex-grow:1;
+    margin: 3px;
+}
+
+.contentbig {
+    background-color: rgb(31, 182, 233);
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    flex-grow:2;
+    margin: 3px;
+
+}
+
+
+

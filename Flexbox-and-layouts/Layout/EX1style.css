@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #343a40;
+}
+
+header,
+aside,
+.content,
+footer {
+  border: none;
+}
+
+main {
+  flex: 1;
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+.content h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #212529;
+}
+
+.key-features {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 24px;
+  box-shadow: 0 2px 6px #ddd;
+}
+
+.key-features h3 {
+  margin-top: 0;
+}
+
+header {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  padding: 22px 30px;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+aside {
+  background-color: #f8f9fa;
+  width: 180px;
+  padding: 25px;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 15px;
+}
+
+.footer-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+}
+
+aside>nav {
+font-weight: bold;
+margin-bottom: 20px;}
+
+aside nav h3 {
+  margin: 0 0 28px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #495057;
+}
+
+aside nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside nav li {
+  margin-bottom: 24px;
+  padding-left: 10px;
+}
+
+aside nav a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 15px;
+}
+
+.sidebar-content > div {
+  background: white;
+  padding: 15px;
+  margin-bottom: 18px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px #ddd;
+}
