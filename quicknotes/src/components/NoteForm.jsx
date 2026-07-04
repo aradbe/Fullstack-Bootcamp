@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function NoteForm({ addNote }) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  const textareaRef = useRef(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,6 +14,12 @@ function NoteForm({ addNote }) {
 
     setTitle("");
     setText("");
+    textareaRef.current.style.height = "auto";
+  }
+
+  function resizeTextarea() {
+    textareaRef.current.style.height = "auto";
+    textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
   }
 
   return (
@@ -25,9 +32,13 @@ function NoteForm({ addNote }) {
       />
 
       <textarea
+        ref={textareaRef}
         placeholder="Write a note..."
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => {
+          setText(e.target.value);
+          resizeTextarea();
+        }}
       />
 
       <button type="submit">Add Note</button>
