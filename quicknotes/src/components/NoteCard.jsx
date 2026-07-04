@@ -1,4 +1,4 @@
-function NoteCard({ note, deleteNote }) {
+function NoteCard({ note, deleteNote, openModal }) {
   const formattedDate = new Date(note.createdAt).toLocaleString("en-US", {
     month: "short",
     day: "numeric",
@@ -7,7 +7,10 @@ function NoteCard({ note, deleteNote }) {
   });
 
   return (
-    <div className="note-card">
+    <div
+      className="note-card"
+      onClick={() => openModal(note)}
+    >
       {note.title && <h3>{note.title}</h3>}
 
       <p>{note.text}</p>
@@ -16,7 +19,10 @@ function NoteCard({ note, deleteNote }) {
 
       <button
         className="delete-btn"
-        onClick={() => deleteNote(note.id)}
+        onClick={(e) => {
+          e.stopPropagation();
+          deleteNote(note.id);
+        }}
       >
         Delete
       </button>

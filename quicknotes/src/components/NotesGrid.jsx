@@ -1,6 +1,6 @@
 import NoteCard from "./NoteCard";
 
-function NotesGrid({ notes, deleteNote }) {
+function NotesGrid({ notes, deleteNote, openModal }) {
   return (
     <div className="notes-grid">
       {notes.map((note) => (
@@ -8,6 +8,7 @@ function NotesGrid({ notes, deleteNote }) {
           key={note.id}
           note={note}
           deleteNote={deleteNote}
+          openModal={openModal}
         />
       ))}
     </div>
