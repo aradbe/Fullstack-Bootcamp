@@ -4,16 +4,19 @@ function NoteForm({
   addNote,
   initialTitle = "",
   initialText = "",
+  initialCategory = "Personal",
   buttonText = "Add Note",
 }) {
   const [title, setTitle] = useState(initialTitle);
   const [text, setText] = useState(initialText);
+  const [category, setCategory] = useState(initialCategory);
 
   const textareaRef = useRef(null);
 
   function resizeTextarea() {
     textareaRef.current.style.height = "auto";
-    textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
+    textareaRef.current.style.height =
+      textareaRef.current.scrollHeight + "px";
   }
 
   function handleSubmit(e) {
@@ -21,13 +24,17 @@ function NoteForm({
 
     if (!text.trim()) return;
 
-    addNote(title, text);
+    addNote(title, text, category);
 
-    setTitle("");
-    setText("");
+    // Only clear the form when creating a new note
+    if (buttonText === "Add Note") {
+      setTitle("");
+      setText("");
+      setCategory("Personal");
 
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
+      if (textareaRef.current) {
+        textareaRef.current.style.height = "auto";
+      }
     }
   }
 
@@ -49,6 +56,16 @@ function NoteForm({
           resizeTextarea();
         }}
       />
+
+      <select
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      >
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+        <option value="School">School</option>
+        <option value="Other">Other</option>
+      </select>
 
       <button type="submit">{buttonText}</button>
     </form>

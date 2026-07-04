@@ -36,27 +36,34 @@ function NoteModal({ note, isOpen, closeModal, updateNote }) {
       }}
     >
       <h2 className="note-modal-title">Edit Note</h2>
-      
+
       <NoteForm
-        addNote={(title, text) => updateNote(note.id, title, text)}
+        addNote={(title, text, category) =>
+          updateNote(note.id, title, text, category)
+        }
         initialTitle={note.title}
         initialText={note.text}
+        initialCategory={note.category}
         buttonText="Save Changes"
       />
 
       <hr />
 
-      <p>
-        <strong>Created:</strong> {createdDate}
-      </p>
-
-      {updatedDate && (
+      <div className="modal-dates">
         <p>
-          <strong>Updated:</strong> {updatedDate}
+          <strong>Created:</strong> {createdDate}
         </p>
-      )}
 
-      <button onClick={closeModal}>Close</button>
+        {updatedDate && (
+          <p>
+            <strong>Updated:</strong> {updatedDate}
+          </p>
+        )}
+      </div>
+
+      <button className="modal-close-btn" onClick={closeModal}>
+        Close
+      </button>
     </Modal>
   );
 }

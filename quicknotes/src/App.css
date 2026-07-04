@@ -106,3 +106,25 @@ h1 {
   font-size: 30px;
   font-weight: bold;
 }
+
+.note-form select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.Personal {
+  background: #fff8c5;
+}
+
+.Work {
+  background: #d6ecff;
+}
+
+.School {
+  background: #dfffdc;
+}
+
+.Other {
+  background: #f3ddff;
+}

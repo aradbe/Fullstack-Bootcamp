@@ -7,7 +7,10 @@ function NoteCard({ note, deleteNote, openModal }) {
   });
 
   return (
-    <div className="note-card" onClick={() => openModal(note)}>
+    <div
+      className={`note-card ${note.category}`}
+      onClick={() => openModal(note)}
+    >
       {note.title && <h3>{note.title}</h3>}
 
       <p>{note.text}</p>

@@ -14,6 +14,7 @@ function App() {
 
     return [];
   });
+
   const [selectedNote, setSelectedNote] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -21,11 +22,12 @@ function App() {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
-  function addNote(title, text) {
+  function addNote(title, text, category) {
     const newNote = {
       id: Date.now(),
       title,
       text,
+      category,
       createdAt: new Date(),
     };
 
@@ -33,20 +35,23 @@ function App() {
   }
 
   function deleteNote(id) {
-    const confirmed = confirm("Are you sure you want to delete your note?");
+    const confirmed = confirm(
+      "Are you sure you want to delete your note?"
+    );
 
     if (!confirmed) return;
 
     setNotes(notes.filter((note) => note.id !== id));
   }
 
-  function updateNote(id, title, text) {
+  function updateNote(id, title, text, category) {
     const updatedNotes = notes.map((note) => {
       if (note.id === id) {
         return {
           ...note,
           title,
           text,
+          category,
           updatedAt: new Date(),
         };
       }
@@ -74,7 +79,11 @@ function App() {
 
       <NoteForm addNote={addNote} />
 
-      <NotesGrid notes={notes} deleteNote={deleteNote} openModal={openModal} />
+      <NotesGrid
+        notes={notes}
+        deleteNote={deleteNote}
+        openModal={openModal}
+      />
 
       <NoteModal
         note={selectedNote}
