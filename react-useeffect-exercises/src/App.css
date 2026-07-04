@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.post {
+  width: 220px;
+  border: 1px solid gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.post h2 {
+  font-size: 18px;
+}
