@@ -7,16 +7,24 @@ function NoteCard({ note, deleteNote, openModal }) {
   });
 
   return (
-    <div
-      className="note-card"
-      onClick={() => openModal(note)}
-    >
+    <div className="note-card" onClick={() => openModal(note)}>
       {note.title && <h3>{note.title}</h3>}
 
       <p>{note.text}</p>
 
-      <small>{formattedDate}</small>
+      <small>Created: {formattedDate}</small>
 
+      {note.updatedAt && (
+        <small>
+          Updated:{" "}
+          {new Date(note.updatedAt).toLocaleString("en-US", {
+            month: "short",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+          })}
+        </small>
+      )}
       <button
         className="delete-btn"
         onClick={(e) => {

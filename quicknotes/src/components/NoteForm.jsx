@@ -1,9 +1,20 @@
 import { useState, useRef } from "react";
 
-function NoteForm({ addNote }) {
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+function NoteForm({
+  addNote,
+  initialTitle = "",
+  initialText = "",
+  buttonText = "Add Note",
+}) {
+  const [title, setTitle] = useState(initialTitle);
+  const [text, setText] = useState(initialText);
+
   const textareaRef = useRef(null);
+
+  function resizeTextarea() {
+    textareaRef.current.style.height = "auto";
+    textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -14,12 +25,10 @@ function NoteForm({ addNote }) {
 
     setTitle("");
     setText("");
-    textareaRef.current.style.height = "auto";
-  }
 
-  function resizeTextarea() {
-    textareaRef.current.style.height = "auto";
-    textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+    }
   }
 
   return (
@@ -41,7 +50,7 @@ function NoteForm({ addNote }) {
         }}
       />
 
-      <button type="submit">Add Note</button>
+      <button type="submit">{buttonText}</button>
     </form>
   );
 }

@@ -1,22 +1,32 @@
 import Modal from "react-modal";
+import NoteForm from "./NoteForm";
 
 Modal.setAppElement("#root");
 
-function NoteModal({ note, isOpen, closeModal }) {
+function NoteModal({ note, isOpen, closeModal, updateNote }) {
   if (!note) return null;
 
-  const formattedDate = new Date(note.createdAt).toLocaleString("en-US", {
+  const createdDate = new Date(note.createdAt).toLocaleString("en-US", {
     month: "short",
     day: "numeric",
     hour: "numeric",
     minute: "2-digit",
   });
 
+  const updatedDate = note.updatedAt
+    ? new Date(note.updatedAt).toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+      })
+    : null;
+
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={closeModal}
-      contentLabel="Note Details"
+      contentLabel="Edit Note"
       style={{
         content: {
           maxWidth: "600px",
@@ -25,14 +35,26 @@ function NoteModal({ note, isOpen, closeModal }) {
         },
       }}
     >
-      {note.title && <h2>{note.title}</h2>}
+      <h2>Edit Note</h2>
 
-      <p>{note.text}</p>
+      <NoteForm
+        addNote={(title, text) => updateNote(note.id, title, text)}
+        initialTitle={note.title}
+        initialText={note.text}
+        buttonText="Save Changes"
+      />
 
-      <small>Created: {formattedDate}</small>
+      <hr />
 
-      <br />
-      <br />
+      <p>
+        <strong>Created:</strong> {createdDate}
+      </p>
+
+      {updatedDate && (
+        <p>
+          <strong>Updated:</strong> {updatedDate}
+        </p>
+      )}
 
       <button onClick={closeModal}>Close</button>
     </Modal>

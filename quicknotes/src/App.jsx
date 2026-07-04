@@ -28,6 +28,24 @@ function App() {
     setNotes(notes.filter((note) => note.id !== id));
   }
 
+  function updateNote(id, title, text) {
+    const updatedNotes = notes.map((note) => {
+      if (note.id === id) {
+        return {
+          ...note,
+          title,
+          text,
+          updatedAt: new Date(),
+        };
+      }
+
+      return note;
+    });
+
+    setNotes(updatedNotes);
+    closeModal();
+  }
+
   function openModal(note) {
     setSelectedNote(note);
     setIsModalOpen(true);
@@ -46,7 +64,12 @@ function App() {
 
       <NotesGrid notes={notes} deleteNote={deleteNote} openModal={openModal} />
 
-      <NoteModal note={selectedNote} isOpen={isModalOpen} closeModal={closeModal} />
+      <NoteModal
+        note={selectedNote}
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        updateNote={updateNote}
+      />
     </div>
   );
 }
