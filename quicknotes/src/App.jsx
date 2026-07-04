@@ -17,6 +17,8 @@ function App() {
 
   const [selectedNote, setSelectedNote] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -35,9 +37,7 @@ function App() {
   }
 
   function deleteNote(id) {
-    const confirmed = confirm(
-      "Are you sure you want to delete your note?"
-    );
+    const confirmed = confirm("Are you sure you want to delete your note?");
 
     if (!confirmed) return;
 
@@ -73,17 +73,42 @@ function App() {
     setSelectedNote(null);
   }
 
+  const filteredNotes = notes.filter((note) => {
+    const matchesSearch =
+      note.title.toLowerCase().includes(search.toLowerCase()) ||
+      note.text.toLowerCase().includes(search.toLowerCase());
+
+    const matchesCategory =
+      selectedCategory === "All" || note.category === selectedCategory;
+
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <div className="app">
       <h1>QuickNotes</h1>
 
       <NoteForm addNote={addNote} />
 
-      <NotesGrid
-        notes={notes}
-        deleteNote={deleteNote}
-        openModal={openModal}
+      <input
+        type="text"
+        placeholder="Search notes..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search-bar"
       />
+
+      <div className="filters">
+        <button onClick={() => setSelectedCategory("All")}>All</button>
+        <button onClick={() => setSelectedCategory("Personal")}>
+          Personal
+        </button>
+        <button onClick={() => setSelectedCategory("Work")}>Work</button>
+        <button onClick={() => setSelectedCategory("School")}>School</button>
+        <button onClick={() => setSelectedCategory("Other")}>Other</button>
+      </div>
+
+      <NotesGrid notes={filteredNotes} deleteNote={deleteNote} openModal={openModal} />
 
       <NoteModal
         note={selectedNote}
