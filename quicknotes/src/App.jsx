@@ -1,13 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import NoteForm from "./components/NoteForm";
 import NotesGrid from "./components/NotesGrid";
 import NoteModal from "./components/NoteModal";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = localStorage.getItem("notes");
+
+    if (savedNotes) {
+      return JSON.parse(savedNotes);
+    }
+
+    return [];
+  });
   const [selectedNote, setSelectedNote] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   function addNote(title, text) {
     const newNote = {

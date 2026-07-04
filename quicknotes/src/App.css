@@ -89,3 +89,20 @@ h1 {
 .delete-btn:hover {
   background: darkred;
 }
+
+.ReactModal__Content {
+  border-radius: 12px !important;
+  padding: 30px !important;
+}
+
+.ReactModal__Overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.note-modal-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 30px;
+  font-weight: bold;
+}

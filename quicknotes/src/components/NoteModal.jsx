@@ -35,8 +35,8 @@ function NoteModal({ note, isOpen, closeModal, updateNote }) {
         },
       }}
     >
-      <h2>Edit Note</h2>
-
+      <h2 className="note-modal-title">Edit Note</h2>
+      
       <NoteForm
         addNote={(title, text) => updateNote(note.id, title, text)}
         initialTitle={note.title}
