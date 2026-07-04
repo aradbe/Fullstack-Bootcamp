@@ -73,3 +73,13 @@ h1 {
 .delete-btn:hover {
   background: darkred;
 }
+
+.note-form input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.note-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}

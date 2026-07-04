@@ -8,6 +8,8 @@ function NoteCard({ note, deleteNote }) {
 
   return (
     <div className="note-card">
+      {note.title && <h3>{note.title}</h3>}
+
       <p>{note.text}</p>
 
       <small>{formattedDate}</small>

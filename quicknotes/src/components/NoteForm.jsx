@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function NoteForm({ addNote }) {
+  const [title, setTitle] = useState("");
   const [text, setText] = useState("");
 
   function handleSubmit(e) {
@@ -8,13 +9,21 @@ function NoteForm({ addNote }) {
 
     if (!text.trim()) return;
 
-    addNote(text);
+    addNote(title, text);
 
+    setTitle("");
     setText("");
   }
 
   return (
     <form onSubmit={handleSubmit} className="note-form">
+      <input
+        type="text"
+        placeholder="Note title (optional)"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+
       <textarea
         placeholder="Write a note..."
         value={text}

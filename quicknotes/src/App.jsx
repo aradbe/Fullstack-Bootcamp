@@ -6,9 +6,10 @@ import NotesGrid from "./components/NotesGrid";
 function App() {
   const [notes, setNotes] = useState([]);
 
-  function addNote(text) {
+  function addNote(title, text) {
     const newNote = {
       id: Date.now(),
+      title,
       text,
       createdAt: new Date(),
     };
@@ -17,9 +18,7 @@ function App() {
   }
 
   function deleteNote(id) {
-    const confirmed = confirm(
-      "Are you sure you want to delete your note?"
-    );
+    const confirmed = confirm("Are you sure you want to delete your note?");
 
     if (!confirmed) return;
 
@@ -32,10 +31,7 @@ function App() {
 
       <NoteForm addNote={addNote} />
 
-      <NotesGrid
-        notes={notes}
-        deleteNote={deleteNote}
-      />
+      <NotesGrid notes={notes} deleteNote={deleteNote} />
     </div>
   );
 }
