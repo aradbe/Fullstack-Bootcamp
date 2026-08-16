@@ -1,0 +1,6 @@
+{
+  "name": "mongoose-population-practice",
+  "private": true,
+  "scripts": { "test": "node --test" },
+  "dependencies": { "mongoose": "^8.18.0" }
+}
